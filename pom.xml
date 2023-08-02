@@ -48,11 +48,11 @@
             <version>0.6.2</version>
         </dependency>
 
-        <!--        <dependency>-->
-        <!--            <groupId>app.getxray</groupId>-->
-        <!--            <artifactId>xray-maven-plugin</artifactId>-->
-        <!--            <version>0.7.3</version>-->
-        <!--        </dependency>-->
+        <dependency>
+            <groupId>app.getxray</groupId>
+            <artifactId>xray-maven-plugin</artifactId>
+            <version>0.7.3</version>
+        </dependency>
 
         <dependency>
             <groupId>org.junit.platform</groupId>
@@ -66,7 +66,6 @@
             <artifactId>junit-platform-commons</artifactId>
             <version>1.9.2</version>
         </dependency>
-
 
 
         <dependency>
