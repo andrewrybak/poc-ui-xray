@@ -1,6 +1,6 @@
 package com.xray.mainpage;
 
-//import app.getxray.xray.junit.customjunitxml.annotations.XrayTest;
+import app.getxray.xray.junit.customjunitxml.annotations.XrayTest;
 import com.github.javafaker.Faker;
 import com.microsoft.playwright.Locator;
 import com.microsoft.playwright.Page;
@@ -22,7 +22,7 @@ public class LoginPageTest extends BaseTestCase {
     @Test
     @Order(1)
     @DisplayName("Verify Login is successful")
-//    @XrayTest(id = "QAT-26")
+    @XrayTest(key = "QAT-26")
     void verifyLoginSuccess() throws InterruptedException {
         String login = System.getProperty("login");
         String pwd = System.getProperty("password");
@@ -39,7 +39,7 @@ public class LoginPageTest extends BaseTestCase {
     @Test
     @Order(2)
     @DisplayName("Verify Tasks are visible")
-//    @XrayTest(id = "QAT-27")
+    @XrayTest(key = "QAT-27")
     void verifyTasksAreVisible() {
         Locator loc = page.locator("//h2[contains(@class,'MuiTypography-root MuiTypography-h2')]");
 
@@ -49,7 +49,7 @@ public class LoginPageTest extends BaseTestCase {
     @Test
     @Order(3)
     @DisplayName("Verify Workflow page is opened")
-//    @XrayTest(id = "QAT-28")
+    @XrayTest(key = "QAT-28")
     void verifyWorkflowPageOpened() throws InterruptedException {
         page.navigate("https://dev.apps.mastercontrol.engineering/aqem/config/new");
         Thread.sleep(5000);
@@ -59,7 +59,7 @@ public class LoginPageTest extends BaseTestCase {
     @Test
     @Order(4)
     @DisplayName("Verify Workflow creation test")
-//    @XrayTest(id = "QAT-29")
+    @XrayTest(key = "QAT-29")
     void verifyWorkflowCreation() throws InterruptedException {
         Faker faker = new Faker();
 
