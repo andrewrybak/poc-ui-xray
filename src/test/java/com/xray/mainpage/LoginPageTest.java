@@ -58,7 +58,7 @@ public class LoginPageTest extends BaseTestCase {
 
     @Test
     @Order(4)
-    @DisplayName("Verify Workflow creation")
+    @DisplayName("Verify Workflow creation test")
 //    @XrayTest(id = "QAT-29")
     void verifyWorkflowCreation() throws InterruptedException {
         Faker faker = new Faker();
