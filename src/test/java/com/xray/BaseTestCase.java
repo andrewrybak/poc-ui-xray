@@ -12,7 +12,6 @@ public class BaseTestCase {
     protected static Browser browser;
     protected static Page page;
 
-
     @BeforeAll
     static void launchBrowser() {
         playwright = Playwright.create();
