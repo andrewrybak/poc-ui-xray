@@ -17,7 +17,7 @@ jobs:
           distribution: 'temurin'
           cache: maven
 
-      - name: Execute tests with Maven
+      - name: Execute UI tests with Maven
         run: mvn clean test -Dlogin=${{ secrets.login }} -Dpassword=${{ secrets.password }}
 
       - name: Submit results to Xray
