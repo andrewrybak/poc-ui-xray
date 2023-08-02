@@ -42,11 +42,18 @@
             <version>${junit5.version}</version>
         </dependency>
 
-<!--        <dependency>-->
-<!--            <groupId>org.junit.jupiter</groupId>-->
-<!--            <artifactId>junit-jupiter-engine</artifactId>-->
-<!--            <version>5.4.0</version>-->
-<!--        </dependency>-->
+        <dependency>
+            <groupId>app.getxray</groupId>
+            <artifactId>xray-junit-extensions</artifactId>
+            <version>0.6.0</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>app.getxray</groupId>
+            <artifactId>xray-maven-plugin</artifactId>
+            <version>0.7.2</version>
+        </dependency>
 
         <dependency>
             <groupId>org.junit.platform</groupId>

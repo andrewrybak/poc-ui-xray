@@ -17,9 +17,9 @@ public class BaseTestCase {
     static void launchBrowser() {
         playwright = Playwright.create();
         browser = playwright.chromium().launch();
-//        browser = playwright.chromium().launch(new BrowserType.LaunchOptions().setHeadless(true).setSlowMo(2000));
+//        browser = playwright.chromium().launch(new BrowserType.LaunchOptions().setHeadless(false).setSlowMo(2000));
 
-        browser.newContext(new Browser.NewContextOptions().setViewportSize(1792, 1120));
+//        browser.newContext(new Browser.NewContextOptions().setViewportSize(1792, 1120));
         page = browser.newPage();
         page.navigate("https://dev.apps.mastercontrol.engineering/homepage/");
     }
