@@ -1,6 +1,6 @@
 package com.xray.mainpage;
 
-import app.getxray.xray.junit.customjunitxml.annotations.XrayTest;
+//import app.getxray.xray.junit.customjunitxml.annotations.XrayTest;
 import com.github.javafaker.Faker;
 import com.microsoft.playwright.Locator;
 import com.microsoft.playwright.Page;
