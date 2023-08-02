@@ -1,5 +1,6 @@
 package com.xray.mainpage;
 
+import app.getxray.xray.junit.customjunitxml.XrayTestReporterParameterResolver;
 import app.getxray.xray.junit.customjunitxml.annotations.XrayTest;
 import com.github.javafaker.Faker;
 import com.microsoft.playwright.Locator;
@@ -7,11 +8,13 @@ import com.microsoft.playwright.Page;
 import com.microsoft.playwright.options.AriaRole;
 import com.xray.BaseTestCase;
 import org.junit.jupiter.api.*;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
+@ExtendWith(XrayTestReporterParameterResolver.class)
 public class LoginPageTest extends BaseTestCase {
 
     @AfterAll
