@@ -1,5 +1,10 @@
 package com.xray.mainpage;
 
+//import app.getxray.xray.junit.customjunitxml.XrayTestReporterParameterResolver;
+//import app.getxray.xray.junit.customjunitxml.annotations.XrayTest;
+//import app.getxray.xray.junit.customjunitxml.XrayTestReporter;
+//import app.getxray.xray.junit.customjunitxml.XrayTestReporterParameterResolver;
+import app.getxray.xray.junit.customjunitxml.XrayTestReporter;
 import app.getxray.xray.junit.customjunitxml.XrayTestReporterParameterResolver;
 import app.getxray.xray.junit.customjunitxml.annotations.XrayTest;
 import com.github.javafaker.Faker;
@@ -26,13 +31,15 @@ public class LoginPageTest extends BaseTestCase {
     @Order(1)
     @DisplayName("Verify Login is successful")
     @XrayTest(key = "QAT-26")
-    void verifyLoginSuccess() throws InterruptedException {
+    void verifyLoginSuccess(XrayTestReporter xrayReporter) throws InterruptedException {
         String login = System.getProperty("login");
         String pwd = System.getProperty("password");
 
         page.locator("[id=\"okta-signin-username\"]").fill(login);
         page.locator("[id=\"okta-signin-password\"]").fill(pwd);
         page.locator("[id=\"okta-signin-submit\"]").click();
+
+        xrayReporter.addComment("hello");
 
         Thread.sleep(10000);
 
@@ -42,7 +49,7 @@ public class LoginPageTest extends BaseTestCase {
     @Test
     @Order(2)
     @DisplayName("Verify Tasks are visible")
-    @XrayTest(key = "QAT-27")
+//    @XrayTest(key = "QAT-27")
     void verifyTasksAreVisible() {
         Locator loc = page.locator("//h2[contains(@class,'MuiTypography-root MuiTypography-h2')]");
 
@@ -52,7 +59,7 @@ public class LoginPageTest extends BaseTestCase {
     @Test
     @Order(3)
     @DisplayName("Verify Workflow page is opened")
-    @XrayTest(key = "QAT-28")
+//    @XrayTest(key = "QAT-28")
     void verifyWorkflowPageOpened() throws InterruptedException {
         page.navigate("https://dev.apps.mastercontrol.engineering/aqem/config/new");
         Thread.sleep(5000);
@@ -62,7 +69,7 @@ public class LoginPageTest extends BaseTestCase {
     @Test
     @Order(4)
     @DisplayName("Verify Workflow creation test")
-    @XrayTest(key = "QAT-29")
+//    @XrayTest(key = "QAT-29")
     void verifyWorkflowCreation() throws InterruptedException {
         Faker faker = new Faker();
 
