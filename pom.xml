@@ -31,6 +31,30 @@
             <version>${javafaker.version}</version>
         </dependency>
 
+
+        <dependency>
+            <groupId>org.junit.vintage</groupId>
+            <artifactId>junit-vintage-engine</artifactId>
+            <version>${junit5.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.junit.platform</groupId>
+            <artifactId>junit-platform-suite-api</artifactId>
+            <version>1.7.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.junit.platform</groupId>
+            <artifactId>junit-platform-launcher</artifactId>
+            <version>1.7.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.platform</groupId>
+            <artifactId>junit-platform-runner</artifactId>
+            <version>1.7.1</version>
+        </dependency>
+
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-api</artifactId>
@@ -46,7 +70,16 @@
             <groupId>app.getxray</groupId>
             <artifactId>xray-junit-extensions</artifactId>
             <version>0.6.2</version>
+            <scope>test</scope>
         </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.springframework/spring-core -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-core</artifactId>
+            <version>6.0.9</version>
+        </dependency>
+
 
         <dependency>
             <groupId>app.getxray</groupId>
@@ -81,7 +114,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
-                <version>2.21.0</version>
+                <version>2.22.2</version>
                 <configuration>
                     <testFailureIgnore>true</testFailureIgnore>
                     <argLine>
@@ -90,9 +123,9 @@
                     </argLine>
                     <properties>
                         <configurationParameters>
-                            junit.platform.reporting.open.xml.enabled = true
-                            junit.platform.reporting.output.dir = target/surefire-reports
-                            junit.jupiter.execution.order.random.seed=99
+<!--                            junit.platform.reporting.open.xml.enabled = true-->
+<!--                            junit.platform.reporting.output.dir = target/surefire-reports-->
+<!--                            junit.jupiter.execution.order.random.seed=99-->
                         </configurationParameters>
                     </properties>
                 </configuration>
@@ -117,6 +150,18 @@
                 <configuration>
                     <source>1.8</source>
                     <target>1.8</target>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>app.getxray</groupId>
+                <artifactId>xray-maven-plugin</artifactId>
+                <version>0.7.2</version>
+                <configuration>
+                    <cloud>false</cloud>
+                    <projectKey>XT</projectKey>
+                    <reportFormat>junit</reportFormat>
+                    <reportFile>reports/TEST-junit-jupiter.xml</reportFile>
                 </configuration>
             </plugin>
         </plugins>

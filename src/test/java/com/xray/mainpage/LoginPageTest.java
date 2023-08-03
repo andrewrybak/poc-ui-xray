@@ -4,7 +4,7 @@ package com.xray.mainpage;
 //import app.getxray.xray.junit.customjunitxml.annotations.XrayTest;
 //import app.getxray.xray.junit.customjunitxml.XrayTestReporter;
 //import app.getxray.xray.junit.customjunitxml.XrayTestReporterParameterResolver;
-import app.getxray.xray.junit.customjunitxml.XrayTestReporter;
+
 import app.getxray.xray.junit.customjunitxml.XrayTestReporterParameterResolver;
 import app.getxray.xray.junit.customjunitxml.annotations.XrayTest;
 import com.github.javafaker.Faker;
@@ -14,8 +14,6 @@ import com.microsoft.playwright.options.AriaRole;
 import com.xray.BaseTestCase;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.extension.ExtendWith;
-
-import java.nio.file.Paths;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -33,7 +31,7 @@ public class LoginPageTest extends BaseTestCase {
     @Order(1)
     @DisplayName("Verify Login is successful")
     @XrayTest(key = "QAT-26", summary = "Verify Login is successful")
-    void verifyLoginSuccess(XrayTestReporter xrayReporter) throws InterruptedException {
+    void verifyLoginSuccess() throws InterruptedException {
         String login = System.getProperty("login");
         String pwd = System.getProperty("password");
 
@@ -41,7 +39,6 @@ public class LoginPageTest extends BaseTestCase {
         page.locator("[id=\"okta-signin-password\"]").fill(pwd);
         page.locator("[id=\"okta-signin-submit\"]").click();
 
-        xrayReporter.addComment("hello");
 
         Thread.sleep(10000);
 

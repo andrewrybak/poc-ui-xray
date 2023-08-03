@@ -26,5 +26,6 @@ jobs:
           username: ${{ secrets.client_id }}
           password: ${{ secrets.client_secret }}
           testFormat: "junit"
-          testPaths: "**/surefire-reports/TEST-*.xml"
+          testPaths: "**/surefire-reports/TEST-junit-jupiter.xml"
           projectKey: "QAT"
+          testPlanKey: "QAT-39"
