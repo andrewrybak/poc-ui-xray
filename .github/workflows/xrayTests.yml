@@ -30,6 +30,6 @@ jobs:
           username: ${{ secrets.client_id }}
           password: ${{ secrets.client_secret }}
           testFormat: "junit"
-          testPaths: "**/surefire-reports/TEST-junit-jupiter.xml"
+          testPaths: "**/surefire-reports/TEST-com.xray.mainpage.LoginPageTest.xml"
           projectKey: "QAT"
           testPlanKey: "QAT-39"

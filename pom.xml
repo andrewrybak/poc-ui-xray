@@ -123,9 +123,9 @@
                     </argLine>
                     <properties>
                         <configurationParameters>
-<!--                            junit.platform.reporting.open.xml.enabled = true-->
-<!--                            junit.platform.reporting.output.dir = target/surefire-reports-->
-<!--                            junit.jupiter.execution.order.random.seed=99-->
+                            junit.platform.reporting.open.xml.enabled = true
+                            junit.platform.reporting.output.dir = target/surefire-reports
+                            junit.jupiter.execution.order.random.seed=99
                         </configurationParameters>
                     </properties>
                 </configuration>
@@ -161,7 +161,7 @@
                     <cloud>true</cloud>
                     <projectKey>QAT</projectKey>
                     <reportFormat>junit</reportFormat>
-                    <reportFile>target/surefire-reports/TEST-junit-jupiter.xml</reportFile>
+                    <reportFile>target/surefire-reports/TEST-com.*.xml</reportFile>
                 </configuration>
             </plugin>
         </plugins>
