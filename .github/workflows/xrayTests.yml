@@ -22,6 +22,11 @@ jobs:
 
       - name: Submit results to Xray
         uses: mikepenz/xray-action@v2.4.5
+        run: |
+          echo ##########
+          ls /home/runner/work/poc-ui-xray/poc-ui-xray/target/surefire-reports/
+          ls /home/runner/work/poc-ui-xray/poc-ui-xray
+
         with:
           username: ${{ secrets.client_id }}
           password: ${{ secrets.client_secret }}
