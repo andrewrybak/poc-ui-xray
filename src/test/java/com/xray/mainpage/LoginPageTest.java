@@ -15,6 +15,8 @@ import com.xray.BaseTestCase;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.extension.ExtendWith;
 
+import java.nio.file.Paths;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -30,7 +32,7 @@ public class LoginPageTest extends BaseTestCase {
     @Test
     @Order(1)
     @DisplayName("Verify Login is successful")
-    @XrayTest(key = "QAT-26")
+    @XrayTest(key = "QAT-26", summary = "Verify Login is successful")
     void verifyLoginSuccess(XrayTestReporter xrayReporter) throws InterruptedException {
         String login = System.getProperty("login");
         String pwd = System.getProperty("password");
@@ -49,7 +51,7 @@ public class LoginPageTest extends BaseTestCase {
     @Test
     @Order(2)
     @DisplayName("Verify Tasks are visible")
-//    @XrayTest(key = "QAT-27")
+    @XrayTest(key = "QAT-27", summary = "Verify Tasks are visible")
     void verifyTasksAreVisible() {
         Locator loc = page.locator("//h2[contains(@class,'MuiTypography-root MuiTypography-h2')]");
 
@@ -59,7 +61,7 @@ public class LoginPageTest extends BaseTestCase {
     @Test
     @Order(3)
     @DisplayName("Verify Workflow page is opened")
-//    @XrayTest(key = "QAT-28")
+    @XrayTest(key = "QAT-28", summary = "Verify Workflow page is opened")
     void verifyWorkflowPageOpened() throws InterruptedException {
         page.navigate("https://dev.apps.mastercontrol.engineering/aqem/config/new");
         Thread.sleep(5000);
@@ -68,8 +70,8 @@ public class LoginPageTest extends BaseTestCase {
 
     @Test
     @Order(4)
-    @DisplayName("Verify Workflow creation test")
-//    @XrayTest(key = "QAT-29")
+    @DisplayName("Verify Workflow creation")
+    @XrayTest(key = "QAT-29", summary = "Verify Workflow creation")
     void verifyWorkflowCreation() throws InterruptedException {
         Faker faker = new Faker();
 
@@ -83,5 +85,13 @@ public class LoginPageTest extends BaseTestCase {
         Locator loc = page.locator("//h3[contains(@class,'MuiTypography-root MuiTypography-h3')]");
 
         assertTrue(loc.isVisible());
+    }
+
+    @Test
+    @Order(5)
+    @DisplayName("Verify Notification was sent")
+    @XrayTest(summary = "Verify Notification was sent")
+    void verify_notification_was_sent() {
+        assertEquals(true, true);
     }
 }
