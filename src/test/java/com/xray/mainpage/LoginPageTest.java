@@ -89,6 +89,7 @@ public class LoginPageTest extends BaseTestCase {
 //        assertTrue(loc.isVisible());
         assertEquals(true, true);
 
+
     }
 
     @Test
