@@ -31,5 +31,5 @@ jobs:
           password: ${{ secrets.client_secret }}
           testFormat: "junit"
           testPaths: "**/surefire-reports/TEST-com.xray.mainpage.LoginPageTest.xml"
-          projectKey: "QAT"
-          testPlanKey: "QAT-39"
+          projectKey: "MC"
+          testPlanKey: "MC-49"
